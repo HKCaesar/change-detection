@@ -44,6 +44,9 @@ tar xjf LT50260472009033EDC00.tar.bz -C LT50260472009033EDC00
 If we list the contents of this directory we will see several files. The files with *TIF* suffix are the bands of our images. If we open one of them with *QGIS* we would see a grayscale image. If we want to see the full colour image, we need to merge these bands in an specific order into a RGB image, in the case of Landsat 5 mission, the appropiate order is to assign the band 3 to red, the band 2 to green, and the band 1 to blue. To do this we will use a tool called GDAL, which can be a pain to install. To avoid going through this process we can use a docker container already packed with the whole GDAL toolbox. We can simply type this command in the directory containing the images:
 
 ```
-docker run --rm -v $(pwd):/data geodata/gdal gdalbuildvrt -separate L5026047_04720090202_RGB.TIF L5026047_04720090202_B30.TIF L5026047_04720090202_B20.TIF L5026047_04720090202_B10.TIF
+docker run --rm -v $(pwd):/data geodata/gdal gdalbuildvrt -separate L5026047_04720090202_RGB.TIF \ 
+                                                                    L5026047_04720090202_B30.TIF \
+                                                                    L5026047_04720090202_B20.TIF \
+                                                                    L5026047_04720090202_B10.TIF
 ```
 
