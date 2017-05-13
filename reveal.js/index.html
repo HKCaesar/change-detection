@@ -24,14 +24,39 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
 				<section>
 					\[ \begin{align}
-					\frac{dz}{{dx}} &= \frac{dz}{{du}}\frac{{du}}{{dx}} 
+					\rho = \frac {cov(U,V)} {\sqrt{var(U)} \sqrt{Var(V)}}
 						\end{align}
 					\]
 				</section>
-				<section>Slide 2</section>
+				<section>
+					\[ \begin{align}
+					var(U) &= var(V) \\
+					       &= 1
+						\end{align}
+					\]
+				</section>
+				<section>
+					\[ \begin{align}
+					var(U - V) &= var(U) + var(V) - 2cov(U,V) \\
+							   &= 2(1 - \rho)
+						\end{align}
+					\]
+				</section>
+				<section>
+					\[ \begin{align}
+					Z = \sum_{i=1}^N \bigg ( \frac{M_i}{\sigma_{M_i}} \bigg ) ^2
+						\end{align}
+					\]
+
+				</section>
+				<section>	
+					\[ \begin{align}
+					\text{Pr(no change)} = 1 - P_{\chi^2;N}(z)
+						\end{align}
+					\]
+				</section>
 			</div>
 		</div>
 
@@ -43,6 +68,8 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: false,
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
