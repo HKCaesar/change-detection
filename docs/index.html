@@ -20,6 +20,28 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			img {
+				border:0px !important;
+				box-shadow: none !important;
+			}
+			ul {
+				list-style-type: none !important;
+			}
+			.veg {
+				color:#0fa149;
+			}
+			.city {
+				color:#fd46a8;
+			}
+			.water {
+				color:#3471f5;
+			}
+			.farm {
+				color:#ead532;
+			}
+		</style>
+
 	</head>
 	<body>
 
@@ -28,30 +50,201 @@
 
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-
+				
 				<section>
-					<a href="#1" class="image">
+					
+						<img src="./imagenes/landsat5.jpeg">
+					
+				</section>
+				<section>
+					
 						<img src="./imagenes/matrix.jpg">
-					</a>	
+					
 				</section>
 				<section>
-					<a href="#2" class="image">
+					
 						<img src="./imagenes/wavelength.jpg">
-					</a>	
+					
 				</section>
 				<section>
-					<a href="#3" class="image">
-						<img src="./imagenes/classification.png">
-					</a>	
+					
+						<img src="./imagenes/landsat-names.jpg">
+					
 				</section>
 				
+				<section>
+					\[ \begin{align}
+						blue &\in [0,255] \\
+						green &\in [0,255] \\
+						red &\in [0,255]\\
+						nir &\in [0,255]\\
+						swir_1 &\in [0,255]\\
+						thermal &\in [0,255]\\
+						swir_2 &\in [0,255]
+						\end{align}
+					\]
+				</section>
+				<section>
+					<h2>pixel</h2>
+					\[ \begin{align}
+						pixel \in [0,255]^7
+						\end{align}
+					\]
+				</section>
+				<section>
+					
+						<img src="./imagenes/rgbmodel.png">
+					
+				</section>
+				<section>
+					<h2>Proyección</h2>
+					\[ \begin{align}
+						p_{rgb} : [0,255]^7 \rightarrow [0,255]^3 
+						\end{align}
+					\]
+				</section>
+				
+				<section>
+					<h2>Color Real</h2>
+					
+						<img src="./imagenes/realcolorsumlabel.jpg">
+					
+				</section>
+
+				<section>
+					
+						<img src="./imagenes/rgb.jpg">
+						
+				</section>
+
+				<section>
+					<h2>Color Falso</h2>
+					
+						<img src="./imagenes/falsecolorsumlabel.jpg">
+						
+				</section>
+
+				<section>
+					
+						<img src="./imagenes/false-color.jpg">
+						
+				</section>
+
+				<section>
+					
+						<img src="./imagenes/bands.jpg">
+						
+				</section>
+
+				<section>
+					<h1>Clasificación</h1>
+				</section>
+
+				<section>
+					<h2>Maquinas de soporte vectorial</h2>
+					<img src="./imagenes/binaryclass_2d_small.png">
+				</section>
+
+				<section>
+					<h2>Maquinas de soporte vectorial</h2>
+					<img src="./imagenes/SVM_8.png">
+				</section>
+
+				<section>
+					<h2>Maquinas de soporte vectorial</h2>
+					<img src="./imagenes/svm_3d_cropped.png">
+				</section>
+
+				
+				<section>
+					<h2>uno contra uno</h2>
+					\[ \begin{align}
+
+						\text{Se entrenan } \frac{n(n - 1)}{2} \text{ clasificadores binarios}
+					
+					\end{align}
+					\]
+				</section>
+
+				
+				<section>
+					<h2>31 de enero de 1985</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/1985.jpg">
+				</section>
+
+				<section>
+					<h2>2 de febrero de 2009</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/2009.jpg">
+				</section>
+
+				<section>
+					<h2>clases</h2>
+				</section>
+
+				<section>
+					<ul>
+						<li class="veg">vegetación</li>
+						<li class="city">asentamientos urbanos</li>
+						<li class="water">agua</li>
+						<li class="farm">tierra agrícola o pastizal</li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Segmentación</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/segmentation.jpg">
+				</section>
+				<section>
+					<h2>algoritmo SLIC</h2>
+				</section>
+
+				<section>
+					<h2>Datos de entrenamiento</h2>
+				</section>
+				<section>
+					<img src="./imagenes/training.jpg">
+				</section>
+
+				<section>
+					<h2>resultado de la clasificación 1985</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/final1985.jpg">
+				</section>
+
+				<section>
+					<h2>resultado de la clasificación 2009</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/final2009.jpg">
+				</section>
+
+				<section>
+					<h1>Detección de cambios</h1>
+				</section>
+
+				<section>
+					<h2>Algoritmo MAD (multivariate alteration detection)</h2>
+				</section>
+
 				<section>
 					\[ \begin{align}
 					\rho = \frac {cov(U,V)} {\sqrt{var(U)} \sqrt{Var(V)}}
 						\end{align}
 					\]
 				</section>
+
 				<section>
 					\[ \begin{align}
 					var(U) &= var(V) \\
@@ -59,6 +252,7 @@
 						\end{align}
 					\]
 				</section>
+
 				<section>
 					\[ \begin{align}
 					var(U - V) &= var(U) + var(V) - 2cov(U,V) \\
@@ -79,6 +273,29 @@
 						\end{align}
 					\]
 				</section>
+
+				<section>
+					<h2>Componentes MAF</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/mad.jpg">
+				</section>
+
+				<section>
+					<h1>Algoritmo MAF (multivariate alteration detection)</h1>
+				</section>
+
+				<section>
+					<h2>Componentes MAF</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/maf.jpg">
+				</section>
+				
+
+
 			</div>
 		</div>
 
