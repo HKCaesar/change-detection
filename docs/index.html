@@ -240,6 +240,101 @@
 
 				<section>
 					\[ \begin{align}
+						
+						(G_{1_1} ,\ldots, G_{1_n})\\
+						(G_{2_1} ,\ldots, G_{2_n})
+						
+						\end{align}
+					\]
+				</section>
+
+				<section>
+					\[ \begin{align}
+						U & =a^\intercal \boldsymbol{G}_1 = a_1G_{1_1} + \ldots + a_nG_{1_n}\\
+						V & =b^\intercal \boldsymbol{G}_2 = b_1G_{2_1} + \ldots + b_nG_{2_n}\\
+						\end{align}
+					\]
+				</section>
+
+
+				<section>
+					\[ \begin{align}
+						U - V
+						\end{align}
+					\]
+				</section>
+
+				<section>
+					\[ 
+						\begin{align}
+						var(U) & =a^\intercal cov(\boldsymbol{G}_1)a \\
+						var(V) & =b^\intercal cov(\boldsymbol{G}_2)b \\
+						cov(U,V) & =a^\intercal cov(\boldsymbol{G}_1,\boldsymbol{G}_2)b = \rho.
+						\end{align}
+					\]
+				</section>
+
+
+				<section>
+
+				\[ 
+
+    			\Sigma=
+\begin{bmatrix}\Sigma_{11} & \Sigma_{12}\\\Sigma_{21} & \Sigma_{22} \end{bmatrix}
+
+
+				\]
+				</section>
+
+				<section>
+					\[ \begin{align}
+						U & =a^\intercal \boldsymbol{G}_1\\
+						V & =b^\intercal \boldsymbol{G}_2\\
+						\end{align}
+					\]
+				</section>
+
+				<section>
+				\[\begin{align}
+						var(U) &= a^\intercal \Sigma_{11} a \\
+						var(V) &=  b^\intercal \Sigma_{22} b  \\
+						cov(U,V)= cov(V,U) &= a^\intercal \Sigma_{12} b = a^\intercal \Sigma_{21} b
+					 \end{align}\]
+				</section>
+
+
+				<section>
+					\[ \begin{align}
+					L & = a^\intercal \Sigma_{12}b - \frac{m_1}{2} a^\intercal \Sigma_{11}a - \frac{m_2}{2}  b^\intercal \Sigma_{22} b
+					 \end{align}\]
+				</section>
+
+				<section>
+					\[\begin{align}
+					\frac{\partial L}{\partial a} & = \Sigma_{12}b - m_1 \Sigma_{11} a = 0\\
+					\frac{\partial L}{\partial b} & = \Sigma_{21}a - m_2 \Sigma_{22} b = 0
+					\end{align}\]
+				</section>
+				<section>
+\[\begin{align}
+\Sigma_{12} \Sigma_{22}^{-1} \Sigma_{21} a &= \rho^{2} \Sigma_{11} a \\
+\Sigma_{21} \Sigma_{11}^{-1} \Sigma_{12} b &= \rho^{2} \Sigma_{22} b
+\end{align}\]
+				</section>
+				<section>
+
+				\[ 
+
+cov(U,V) \text{ sujeto a } var(U)=var(V)=1
+
+
+				\]
+				</section>
+
+
+
+				<section>
+					\[ \begin{align}
 					\rho = \frac {cov(U,V)} {\sqrt{var(U)} \sqrt{Var(V)}}
 						\end{align}
 					\]
@@ -275,7 +370,7 @@
 				</section>
 
 				<section>
-					<h2>Componentes MAF</h2>
+					<h2>Componentes MAD</h2>
 				</section>
 
 				<section>
@@ -283,7 +378,15 @@
 				</section>
 
 				<section>
-					<h1>Algoritmo MAF (multivariate alteration detection)</h1>
+					<h2>Componente mad 1 vs Componente mad 7</h2>
+				</section>
+
+				<section>
+					<img src="./imagenes/mad17.jpg">
+				</section>
+
+				<section>
+					<h1>Posprocesamiento MAF</h1>
 				</section>
 
 				<section>
@@ -293,6 +396,59 @@
 				<section>
 					<img src="./imagenes/maf.jpg">
 				</section>
+				<section>
+					<h2>Componente maf 1 vs Componente maf 7</h2>
+				</section>
+				<section>
+					<img src="./imagenes/maf17.jpg">
+				</section>
+
+				<section>
+					<h2>Detección de cambio</h2>
+				</section>
+				<section>
+					<h2>umbrales de cambio</h2>
+					<img src="./imagenes/twosigma.png">
+				</section>
+				<section>
+					<h2>poligono de cambio</h2>
+					<img src="./imagenes/shape_change.jpg">
+				</section>
+
+				<section>
+					<h2>corte de galleta</h2>
+					<img src="./imagenes/intersect.png">
+				</section>
+
+				<section>
+					<h2>comparación de años con cambio en area de interés</h2>
+					<img src="./imagenes/change_final.png">
+				</section>
+
+				<section>
+					<h2>zoom</h2>
+					<img src="./imagenes/zoom.png">
+				</section>
+
+
+				<section>
+					<h2>análisis</h2>
+					<ul>
+						<li>Asentamientos Urbanos -> Vegetación: 151.11</li>
+						<li>Vegetación -> Asentamientos Urbanos: 156.69</li>
+						<li>Tierra Agrícola o Pastizal -> Asentamientos Urbanos: 615.33</li>
+						<li>Agua -> Tierra Agrícola o Pastizal: 40.77</li>
+						<li>Agua -> Vegetación: 64.89</li>
+						<li>Agua -> Asentamientos Urbanos: 19.89</li>
+						<li>Asentamientos Urbanos -> Tierra Agrícola o Pastizal: 230.04</li>
+						<li>Tierra Agrícola o Pastizal -> Vegetación: 664.83</li>
+						<li>Vegetación -> Agua: 14.49</li>
+						<li>Asentamientos Urbanos -> Agua: 6.48</li>
+						<li>Tierra Agrícola o Pastizal -> Agua: 6.48</li>
+						<li>Vegetación -> Tierra Agrícola o Pastizal: 729.72</li>
+					</ul>
+				</section>
+
 				
 
 
