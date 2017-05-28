@@ -273,7 +273,15 @@
 						\end{align}
 					\]
 				</section>
+				<section>
 
+				\[ 
+
+cov(U,V) \text{ sujeto a } var(U)=var(V)=1
+
+
+				\]
+				</section>
 
 				<section>
 
@@ -321,32 +329,7 @@
 \Sigma_{21} \Sigma_{11}^{-1} \Sigma_{12} b &= \rho^{2} \Sigma_{22} b
 \end{align}\]
 				</section>
-				<section>
 
-				\[ 
-
-cov(U,V) \text{ sujeto a } var(U)=var(V)=1
-
-
-				\]
-				</section>
-
-
-
-				<section>
-					\[ \begin{align}
-					\rho = \frac {cov(U,V)} {\sqrt{var(U)} \sqrt{Var(V)}}
-						\end{align}
-					\]
-				</section>
-
-				<section>
-					\[ \begin{align}
-					var(U) &= var(V) \\
-					       &= 1
-						\end{align}
-					\]
-				</section>
 
 				<section>
 					\[ \begin{align}
@@ -355,19 +338,10 @@ cov(U,V) \text{ sujeto a } var(U)=var(V)=1
 						\end{align}
 					\]
 				</section>
-				<section>
-					\[ \begin{align}
-					Z = \sum_{i=1}^N \bigg ( \frac{M_i}{\sigma_{M_i}} \bigg ) ^2
-						\end{align}
-					\]
 
-				</section>
-				<section>	
-					\[ \begin{align}
-					\text{Pr(no change)} = 1 - P_{\chi^2;N}(z)
-						\end{align}
-					\]
-				</section>
+
+
+
 
 				<section>
 					<h2>Componentes MAD</h2>
@@ -411,12 +385,10 @@ cov(U,V) \text{ sujeto a } var(U)=var(V)=1
 					<img src="./imagenes/twosigma.png">
 				</section>
 				<section>
-					<h2>poligono de cambio</h2>
 					<img src="./imagenes/shape_change.jpg">
 				</section>
 
 				<section>
-					<h2>corte de galleta</h2>
 					<img src="./imagenes/intersect.png">
 				</section>
 
@@ -431,23 +403,6 @@ cov(U,V) \text{ sujeto a } var(U)=var(V)=1
 				</section>
 
 
-				<section>
-					<h2>análisis</h2>
-					<ul>
-						<li>Asentamientos Urbanos -> Vegetación: 151.11</li>
-						<li>Vegetación -> Asentamientos Urbanos: 156.69</li>
-						<li>Tierra Agrícola o Pastizal -> Asentamientos Urbanos: 615.33</li>
-						<li>Agua -> Tierra Agrícola o Pastizal: 40.77</li>
-						<li>Agua -> Vegetación: 64.89</li>
-						<li>Agua -> Asentamientos Urbanos: 19.89</li>
-						<li>Asentamientos Urbanos -> Tierra Agrícola o Pastizal: 230.04</li>
-						<li>Tierra Agrícola o Pastizal -> Vegetación: 664.83</li>
-						<li>Vegetación -> Agua: 14.49</li>
-						<li>Asentamientos Urbanos -> Agua: 6.48</li>
-						<li>Tierra Agrícola o Pastizal -> Agua: 6.48</li>
-						<li>Vegetación -> Tierra Agrícola o Pastizal: 729.72</li>
-					</ul>
-				</section>
 
 				
 				<section>
@@ -475,6 +430,7 @@ cov(U,V) \text{ sujeto a } var(U)=var(V)=1
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				controls: false,
+				progress: false,
 				transition: 'fade', // none/fade/slide/convex/concave/zoom
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
